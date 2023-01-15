@@ -3,7 +3,7 @@ colors/*
 docs
 ginit.vim
 lua/packer_compiled.lua
-lua/user
+# lua/user
 plugin
 ftplugin
 spell
