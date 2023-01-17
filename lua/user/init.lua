@@ -319,6 +319,9 @@ local config = {
                                         })
                                 end
                         },
+                        ["iamcco/markdown-preview.nvim"] = {
+                                run = function() vim.fn["mkdp#util#install"]() end,
+                        },
                 },
                 -- All other entries override the require("<key>").setup({...}) call for default plugins
                 ['null-ls'] = function(config) -- overrides `require("null-ls").setup(config)`
@@ -464,6 +467,9 @@ local config = {
         -- augroups/autocommands and custom filetypes also this just pure lua so
         -- anything that doesn't fit in the normal config locations above can go here
         polish = function()
+                vim.g.mkdp_auto_close = 0 -- set markdown-preview config
+                -- vim.g.mkdp_markdown_css = '~/.config/nvim/github-markdown.css'
+                -- vim.g.mkdp_highlight_css = '~/.config/nvim/solarized_dark.css'
                 -- Set up custom filetypes
                 -- vim.filetype.add {
                 --   extension = {
