@@ -258,6 +258,12 @@ local config = {
                                 desc = 'Search words in all files',
                         },
                         ["<leader>r"] = { ':lua require("undotree").toggle()<CR>', desc = "UndoTree" },
+                        ["<M-mm>"] = { -- ["<M-/>"]
+                                function()
+                                        require('Comment.api').toggle.linewise.current()
+                                end,
+                                desc = 'Comment line',
+                        }
                 },
                 i = {
                         ['<M-s>'] = { '<ESC>:w<cr>', desc = 'Save File Insert' },
@@ -280,6 +286,11 @@ local config = {
                         ['K'] = { ":move '<-2<CR>gv-gv", desc = 'Move Visual Block' },
                         ['<C-a>'] = { '0', desc = 'Go to line head' },
                         ['<C-e>'] = { '$', desc = 'Go to line tail' },
+                        ['<M-mm>'] = {
+                                "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
+                                desc = 'Toggle comment line',
+                        }
+
                 },
         },
 
