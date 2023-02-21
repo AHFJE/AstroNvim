@@ -226,6 +226,10 @@ local config = {
                 n = {
                         -- second key is the lefthand side of the map
                         -- mappings seen under group name "Buffer"
+
+                        ["j"] = { 'jzz', desc = '' },
+                        ['k'] = { 'kzz', desc = "" },
+
                         ['<leader>bb'] = { '<cmd>tabnew<cr>', desc = 'New tab' },
                         ['<leader>bc'] = { '<cmd>BufferLinePickClose<cr>', desc = 'Pick to close' },
                         ['<leader>bj'] = { '<cmd>BufferLinePick<cr>', desc = 'Pick to jump' },
@@ -235,8 +239,8 @@ local config = {
                         ['<C-a>'] = { '0', desc = 'Go to line head' },
                         ['<C-e>'] = { '$', desc = 'Go to line tail' },
                         ['col'] = { ':Telescope colorscheme<CR>', desc = 'Change colorscheme' },
-                        ['<C-u>'] = { '12k', desc = '' },
-                        ['<C-d>'] = { '12j', desc = '' },
+                        ['<C-u>'] = { '12kzz', desc = '' },
+                        ['<C-d>'] = { '12jzz', desc = '' },
                         ['<M-j>'] = { '<cmd>ToggleTerm<cr>', desc = 'Toggle terminal' },
                         ['<Tab>'] = { '<cmd>Neotree toggle<cr>', desc = 'Toggle Explorer' },
                         ['<M-s>'] = { '<ESC>:w<cr>', desc = 'Save File Insert' },
