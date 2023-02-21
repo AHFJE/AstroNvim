@@ -5,7 +5,6 @@
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
 local config = {
-
         -- Configure AstroNvim updates
         updater = {
                 remote = 'origin', -- remote to use
@@ -24,10 +23,8 @@ local config = {
                 --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
                 -- },
         },
-
         -- Set colorscheme to use
         colorscheme = 'default_theme',
-
         -- Add highlight groups in any theme
         highlights = {
                 -- init = { -- this table overrides highlights in all themes
@@ -56,7 +53,6 @@ local config = {
                 --         NeoTreeNormalNC = { bg = "NONE", ctermbg = "NONE" },
                 -- },
         },
-
         -- set vim options here (vim.<first_key>.<second_key> = value)
         options = {
                 opt = {
@@ -106,7 +102,6 @@ local config = {
                 '    ██  ██ ██  ██  ██  ██ ██  ██  ██',
                 '    ██   ████   ████   ██ ██      ██',
         },
-
         -- Default theme configuration
         default_theme = {
                 -- Modify the color palette for the default theme
@@ -150,13 +145,11 @@ local config = {
                         ['which-key'] = true,
                 },
         },
-
         -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
         diagnostics = {
                 virtual_text = true,
                 underline = true,
         },
-
         -- Extend LSP configuration
         lsp = {
                 -- enable servers that you already have installed without mason
@@ -215,7 +208,6 @@ local config = {
                         -- },
                 },
         },
-
         -- Mapping data with "desc" stored directly by vim.keymap.set().
         --
         -- Please use this mappings table to set keyboard mapping since this is the
@@ -297,7 +289,6 @@ local config = {
 
                 },
         },
-
         -- Configure plugins
         plugins = {
                 init = {
@@ -426,7 +417,6 @@ local config = {
                         -- end, -- this sorts files and directories descendantly
                 },
         },
-
         -- LuaSnip Options
         luasnip = {
                 -- Extend filetypes
@@ -439,7 +429,6 @@ local config = {
                         paths = {},
                 },
         },
-
         -- CMP Source Priorities
         -- modify here the priorities of default cmp sources
         -- higher value == higher priority
@@ -454,7 +443,6 @@ local config = {
                         path = 250,
                 },
         },
-
         -- Customize Heirline options
         heirline = {
                 -- -- Customize different separators between sections
@@ -480,7 +468,6 @@ local config = {
                 --   },
                 -- },
         },
-
         -- Modify which-key registration (Use this with mappings table in the above.)
         ['which-key'] = {
                 -- Add bindings which show up as group name
@@ -496,7 +483,6 @@ local config = {
                         },
                 },
         },
-
         -- This function is run last and is a good place to configuring
         -- augroups/autocommands and custom filetypes also this just pure lua so
         -- anything that doesn't fit in the normal config locations above can go here
