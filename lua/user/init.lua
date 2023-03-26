@@ -65,6 +65,7 @@ local config = {
                         backup = false, -- Disable swap file
                         writebackup = false,
                         swapfile = false,
+                        tabstop = 4,
                 },
                 g = {
                         mapleader = ' ', -- sets vim.g.mapleader
@@ -149,6 +150,7 @@ local config = {
         diagnostics = {
                 virtual_text = true,
                 underline = true,
+                update_in_insert = false,
         },
         -- Extend LSP configuration
         lsp = {
@@ -407,14 +409,50 @@ local config = {
                                         end,
                                 },
                         },
+                        buffers = {
+                                follow_current_file = true, -- This will find and focus the file in the active buffer every
+                                -- time the current file is changed while the tree is open.
+                                group_empty_dirs = true, -- when true, empty folders will be grouped together
+                                show_unloaded = true,
+                                window = {
+                                        mappings = {
+                                                ["bd"] = "buffer_delete",
+                                                ["<bs>"] = "navigate_up",
+                                                ["."] = "set_root",
+                                        }
+                                },
+                        },
                         -- sort_case_insensitive = true,
                         -- sort_function = function(a, b)
-                        -- 	if a.type == b.type then
-                        -- 		return a.path > b.path
-                        -- 	else
-                        -- 		return a.type > b.type
-                        -- 	end
+                        --         if a.type == b.type then
+                        --                 return a.path > b.path
+                        --         else
+                        --                 return a.type > b.type
+                        --         end
                         -- end, -- this sorts files and directories descendantly
+                        sort_function = function(a, b)
+                                -- 比较类型，确保目录在文件前面
+                                if a.type ~= b.type then
+                                        return a.type < b.type
+                                end
+
+                                -- 获取文件扩展名
+                                local function get_extension(path)
+                                        return path:match("^.+(%..+)$") or ""
+                                end
+
+                                -- 提取a和b的扩展名
+                                local a_ext = get_extension(a.path)
+                                local b_ext = get_extension(b.path)
+
+                                -- 比较扩展名，如果扩展名不同，则按照扩展名升序排列
+                                if a_ext ~= b_ext then
+                                        return a_ext < b_ext
+                                end
+
+                                -- 如果类型和扩展名都相同，按照路径升序排列
+                                return a.path < b.path
+                        end
                 },
         },
         -- LuaSnip Options
