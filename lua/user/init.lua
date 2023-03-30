@@ -267,6 +267,10 @@ local config = {
                         ['<M-s>'] = { '<ESC>:w<cr>', desc = 'Save File Insert' },
                         ['<C-a>'] = { '<ESC>I', desc = 'Go to line head and Insert' },
                         ['<C-e>'] = { '<ESC>A', desc = 'Go to line tail and Insert' },
+                        ['<C-h>'] = { '<left>' },
+                        ['<C-j>'] = { '<down>' },
+                        ['<C-k>'] = { '<up>' },
+                        ['<C-l>'] = { '<right>' }
                 },
                 t = {
                         -- setting a mapping to false will disable it
